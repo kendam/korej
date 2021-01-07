@@ -18,4 +18,4 @@ var corsOptions = {
 app.use(bodyParser(),cors(corsOptions))
 userController(app)
 
-app.listen(5200)
+app.listen(process.env.PORT || 5200)
