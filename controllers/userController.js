@@ -59,13 +59,8 @@ app.post('/login',(req,res)=>{
     }
     })
 })
-var specificCofig = {
-    origin:"*",
-    methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
-    "optionsSuccessStatus": 204
 
-}
-app.post('/user',cors(specificCofig),(req,res)=>{
+app.post('/user',(req,res)=>{
    console.log(req.body.name)
    bcrypt.hash(req.body.password, 10, function(err, hash) {
        if(err) throw err
