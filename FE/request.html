@@ -1,0 +1,18 @@
+<script>
+
+const getUsers = async () => {
+  const response = await fetch('http://localhost:5200/users', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxNSwiZmlyc3ROYW1lIjoiU2hhbXMiLCJsYXN0TmFtZSI6InVuZGVmaW5lZCIsImxhc3RMb2dpbiI6InRvZGF5IiwiYWdlIjo0MiwiY2l0eSI6IkxhZ29zIiwiZW1haWwiOiJrYWNoaUB0aWlkZWxhYi5jb20iLCJjcmVhdGVkQnkiOm51bGx9LCJpYXQiOjE2MDk4NDI4NDIsImV4cCI6MTYwOTg0MzIwMn0.sKXU83BONrMgpDh-mCyuNVxmxRH78CUHlrHzKOiSS_8'
+    }
+  });
+  const myJson = await response.json(); //extract JSON from the http response
+   alert(JSON.stringify(myJson))
+}
+getUsers().then(function(x){
+    console.log(x)
+
+})
+</script>
